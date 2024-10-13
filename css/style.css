@@ -77,9 +77,14 @@ a {
   line-height: 1.5;
   color: var(--brown);
   font-weight: 700;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  animation: typing 3.5s steps(30, end), 0.5s step-end infinite;
+}
+
+@media screen and (min-width: 768px) {
+  .typewriter p{
+    white-space: nowrap; /* Keeps the content on a single line */
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    animation: typing 3.5s steps(30, end), 0.5s step-end infinite;
+  }
 }
 
 /* The typing effect */
@@ -817,6 +822,12 @@ p {
   border-color: var(--white);
 }
 
+.subcrible-button:hover{
+  background-color: var(--brown);
+    border-color: var(--brown);
+    color: var(--white);
+}
+
 .button-primary:hover {
   border-color: var(--green);
   background-color: var(--green);
@@ -1009,6 +1020,29 @@ p {
   border-radius: 1em;
 }
 
+.banner-lesson{
+  display: grid;
+  gap:1em;
+}
+
+@media (min-width: 0px) {
+  .banner-lesson {
+      grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .banner-lesson {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 920px) {
+  .banner-lesson {
+      grid-template-columns: 2fr 1fr;
+  }
+}
+
+
 .banner-left{
   position: relative;
     background-image: url("../images/bg-lessong-1.webp");
@@ -1022,6 +1056,16 @@ p {
     cursor: pointer;
 }
 
+.banner-left::before{
+  content: "";
+  position: absolute;
+  inset: 0px;
+  background-color: var(--green);
+  opacity: 0.8;
+  border-radius: 2em;
+  z-index: 1;
+}
+
 .banner-right{
   position: relative;
     background-image: url(../images/bg-lesson-2.webp);
@@ -1033,4 +1077,99 @@ p {
     cursor: pointer;
     padding: 2em;
     border-radius: 2em;
+}
+
+.banner-right::before{
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background-color: var(--brown);
+    opacity: 0.8;
+    border-radius: 2em;
+    z-index: 1;
+}
+
+.banner-right:hover::before, .banner-left:hover::before {
+  opacity: 0.5;
+}
+
+.banner-side{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.banner-content{
+  display: flex;
+  gap: 0.6em;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 1.5em 0px;
+}
+
+.color-white{
+  color: white;
+} 
+.z-2{
+  z-index:2;
+}
+
+.color-brown{
+  color: var(--brown);
+}
+
+.color-green{
+  color: var(--green);
+}
+
+.banner-content img{
+  width: 3em;
+  border-radius: 1em;
+  border: 3px solid rgba(255, 255, 255, 0.314);
+}
+
+.banner-content .subInfoTitle p{
+  color: var(--white);
+}
+
+/* herb */
+.content-herb{
+  max-width: 684px;
+  min-height: 100vh;
+}
+.herb-card-wrapper{
+  display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+}
+.herb-card{
+  background-color: var(--white);
+  border-radius: 2em;
+  margin-top: 2em;
+  padding: 2em 1em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+  display: grid;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 20px;
+  animation: 1s ease-in-out 0s 1 normal forwards running slideInFromBottom; 
+}
+
+.herb-card img{
+  width: 100%;
+  border-radius: 2em;
+}
+
+@media (min-width: 0px) {
+  .herb-card {
+      grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .herb-card {
+      grid-template-columns: 1fr 1fr;
+  }
 }
