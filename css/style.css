@@ -816,6 +816,43 @@ p {
   border-color: var(--white);
 }
 
+.button-chat{
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--white);
+  height: 1.4em;
+  width: 1.4em;
+  background-color: var(--green);
+  outline: 0px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  text-decoration: none;
+  flex: 0 0 auto;
+  padding: 8px;
+  overflow: visible;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0px;
+  border-radius: 50%;
+}
+
+.button-chat:hover{
+  background-color: var(--black);
+}
+
 .subcrible-button:hover{
   background-color: var(--brown);
     border-color: var(--brown);
@@ -1216,13 +1253,221 @@ p {
   font-size: 16px;
 }
 
-.continue-button .continue-icon{
+.button-icon{
   display: inherit;
   margin-right: 8px;
   margin-left: -4px;
 }
 
-.continue-icon svg{
+.button-icon svg{
   width: 20px;
   height: 20px;
+}
+
+.herb-info sub{
+  font-size: 1em;
+  opacity: .5;
+}
+
+.herb-warning{
+  display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.warning{
+  display: flex;
+    gap: 6px;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 1px solid red;
+    border-radius: 2em;
+    padding: 0.3em 0.6em;
+    scale: 0.8;
+    color: red;
+    font-weight: bold;
+}
+
+.chat-input{
+  display: grid;
+    grid-template-columns: 2.4em auto 2.4em;
+    border: 1px solid white;
+    padding: 0.8em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1.6em;
+    border-radius: 1em;
+    margin: 0.8em 0px 0.5em;
+    gap: 2px;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: white;
+}
+
+.chat-input-wrapper{
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0px;
+  padding: 0px;
+  margin: 0px;
+  vertical-align: top;
+  color: var(--brown);
+  border: none;
+  width: 100%;
+}
+
+.chat-input-field{
+  font-family: Quicksand, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  cursor: text;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+}
+
+.chat-input-field .input-field{
+    color: var(--brown);
+    font-weight: 700;
+}
+
+.input-field{
+  letter-spacing: inherit;
+  border: 0px;
+  box-sizing: content-box;
+  background: none;
+  height: 1.4375em;
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  min-width: 0px;
+  width: 100%;
+  animation-name: mui-auto-fill-cancel;
+  animation-duration: 10ms;
+  padding: 16.5px 14px;
+}
+
+.input-field::placeholder{
+  color: var(--brown);
+}
+
+.input-field:focus{
+  outline: 0px;
+}
+
+.chat-input-field .input-field::-moz-placeholder {
+  color: var(--brown);
+}
+
+.chat-notify{
+  display: flex;
+    -webkit-box-align: start;
+    align-items: start;
+    margin: 1.6em 0px 2.8em;
+    gap: 12px;
+}
+
+.chat-notify p{
+  color: var(--brown); 
+  opacity: 0.6;
+}
+
+.most-recent{
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1em 0px 0px;
+}
+
+.question{
+  display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    font-family: Quicksand, sans-serif;
+    font-weight: 500;
+    line-height: 1.75;
+    min-width: 64px;
+    text-transform: none;
+    text-align: left;
+    font-size: 1em;
+    background-color: var(--brown);
+    color: var(--white);
+    outline: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-image: initial;
+    text-decoration: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-color: var(--black);
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    margin: 0.2em;
+}
+
+.question:hover{
+  border-color: var(--green);
+  background-color: var(--green);
+  color: white;
+}
+/* home */
+.function-buttons{
+  margin: 1.4em 0px;
+}
+
+.navigation{
+  display: flex;
+  gap:15px;
+}
+.show-all-herb{
+  color:var(--brown);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.next-herb-title{
+  border-bottom: 1px solid var(--brown);
+}
+
+.lesson-list{
+  display: flex;
+    gap: 15px;
+    -webkit-box-align: start;
+    align-items: start;
+    margin: 1.4em 0px;
+    cursor: pointer;
+    padding: 0.4em;
+    border-radius: 1em;
+}
+
+.lesson-item{
+  display: flex;
+  gap: 15px;
+  -webkit-box-align: start;
+  align-items: start;
+  margin: 1.4em 0px;
+  cursor: pointer;
+  padding: 0.4em;
+  border-radius: 1em;
+}
+
+.lesson-item .lesson-image-wrapper img{
+  width: 5em; 
+  border-radius: 1em;
+   object-fit: cover; 
+   aspect-ratio: 1 / 1;
 }
