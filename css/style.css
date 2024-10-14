@@ -26,12 +26,6 @@ body {
   align-items: center;
 }
 
-ul,
-ol {
-  padding: 0px;
-  list-style-type: none;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -841,6 +835,7 @@ p {
   color: var(--white);
   font-size: 0.9em;
   position: relative;
+  margin-top: 20px;
 }
 
 .banner p {
@@ -1163,6 +1158,22 @@ p {
   border-radius: 2em;
 }
 
+.bg-pink{
+  background-color: var(--pink);
+}
+
+.bg-pink-2{
+  background-color: rgb(255, 182, 193);
+}
+
+.bg-water{
+  background-color: rgb(179, 240, 242);
+}
+
+.bg-lime{
+  background-color: var(--lime);
+}
+
 @media (min-width: 0px) {
   .herb-card {
       grid-template-columns: 1fr;
@@ -1172,4 +1183,46 @@ p {
   .herb-card {
       grid-template-columns: 1fr 1fr;
   }
+}
+
+.herb-detail{
+  margin-top: 1em;
+  animation: 1.5s ease-in-out 0s 1 normal forwards running slideInFromBottom;
+}
+
+.herb-detail .herb-detail-wrapper{
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.herb-images .row *{
+  padding-right: 0px;
+}
+
+.herb-images .row img{
+  width: 100%;
+  border-radius: 1em;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.continue-button{
+  padding: 0.8em 1.6em;
+  margin: 4em 0px 0px;
+  font-size: 16px;
+}
+
+.continue-button .continue-icon{
+  display: inherit;
+  margin-right: 8px;
+  margin-left: -4px;
+}
+
+.continue-icon svg{
+  width: 20px;
+  height: 20px;
 }
