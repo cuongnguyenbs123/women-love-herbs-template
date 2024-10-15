@@ -626,7 +626,7 @@ p {
   display: flex;
   flex-direction: column;
   height: 100%;
-  z-index: 1200;
+  z-index: 998;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -1468,11 +1468,12 @@ p {
   gap: 15px;
   -webkit-box-align: start;
   align-items: start;
-  margin: 1.4em 0px;
   cursor: pointer;
-  padding: 0.4em;
   border-radius: 1em;
+  padding: 0.4em;
+  margin: 1.4em 0px;
 }
+
 
 .sidebar-item .herb-image-item {
   width: 3em;
@@ -1652,6 +1653,10 @@ p {
   }
 }
 
+#questModal{
+  overflow: hidden;
+}
+
 .quest-notice{
   -webkit-box-align: center;
   align-items: center;
@@ -1670,7 +1675,6 @@ p {
   display: flex;
   flex-direction: column;
   max-height: calc(100% - 64px);
-  max-width: 600px;
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
   margin: 32px;
 }
@@ -1732,7 +1736,7 @@ p {
 }
 
 .modal-wrapper{
-  display: grid;
+  display: flex;
   gap: 1em;
   margin: 0em;
 }
@@ -1744,6 +1748,11 @@ p {
   top: 0px; 
   left: 0px; 
   z-index: 1;
+}
+
+.quest-name{
+  background:transparent;
+  border: none;
 }
 
 .modal-description{
@@ -1777,4 +1786,123 @@ p {
     top: 0px;
     transition: transform 0.4s linear;
     transform-origin: left center;
+}
+
+@media (min-width: 576px) {
+  .modal-cs-mw {
+      max-width: 900px;
+  }
+}
+.herbs-explore{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.4em;
+}
+
+.explore-journey{
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 1em;
+  padding: 0.4em;
+  cursor: pointer;
+}
+
+.explore-journey:hover {
+  background-color: rgba(156, 163, 175, 0.15);
+  cursor: pointer;
+  color: black;
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.explore-journey img{
+  width: 100%; 
+  border-radius: 0.8em;
+}
+
+.explore-journey p{
+  font-size: 1em; 
+  margin: 0.4em 0px; 
+  font-weight: bold;
+}
+
+.modal-cs-mw{
+  height: 100%;
+}
+
+.mw-600{
+  max-width: 600px;
+}
+
+.the-misson{
+  display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    gap: 8px;
+    border-radius: 1em;
+    border: 1px solid rgb(156, 163, 175);
+    padding: 4px 4px 4px 10px;
+    margin: 0.6em 0px;
+}
+
+.the-misson .misson-info{
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.to-the-misson{
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.54);
+  outline: 0px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  margin: 0px;
+  text-decoration: none;
+  flex: 0 0 auto;
+  padding: 8px;
+  border-radius: 50%;
+  overflow: visible;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.to-the-misson:hover{
+  background-color: rgb(53, 136, 86);
+  color: white;
+}
+
+.to-the-misson .icon{
+  overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+.misson-notice{
+  margin: 0.5em 0px;
+   opacity: 0.5;
 }
